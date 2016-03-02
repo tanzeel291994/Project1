@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project1</string>
+    <string name="action_settings">Sort by votes</string>
+    <string name="title">Title:</string>
+    <string name="image">Image:</string>
+    <string name="synopsis">Overview:</string>
+    <string name="rating">Rating:</string>
+    <string name="date">Release date:</string>
+
+</resources>
