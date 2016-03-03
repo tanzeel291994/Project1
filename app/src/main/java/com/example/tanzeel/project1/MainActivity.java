@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     String discover_movies="https://api.themoviedb.org/3/discover/movie?api_key=60e7c427c564cf915fd06a078398855a&page=1";
     String sort_movies="https://api.themoviedb.org/3/discover/movie?api_key=60e7c427c564cf915fd06a078398855a&page=1&sort_by=vote_average.des";
     Networking networking;
+    Menu menuTemp;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -71,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
     {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+        menu.getItem(1).setEnabled(false);
+        menuTemp=menu;
         return super.onCreateOptionsMenu(menu);
     }
     public boolean onOptionsItemSelected(MenuItem item)
@@ -83,8 +86,20 @@ public class MainActivity extends AppCompatActivity {
                 networking.cancel(true);
                 movies.clear();
                 image_uri.clear();
+                menuTemp.getItem(1).setEnabled(true);
+                menuTemp.getItem(0).setEnabled(false);
                 Networking networking_sort=new Networking();
                 networking_sort.execute(sort_movies);
+                break;
+            case R.id.popular:
+                Toast.makeText(getBaseContext(), "Sorting.by popularity", Toast.LENGTH_SHORT).show();
+                networking.cancel(true);
+                movies.clear();
+                image_uri.clear();
+                menuTemp.getItem(0).setEnabled(true);
+                menuTemp.getItem(1).setEnabled(false);
+                Networking networking_sort_popular=new Networking();
+                networking_sort_popular.execute(discover_movies);
                 break;
         }
         return true;

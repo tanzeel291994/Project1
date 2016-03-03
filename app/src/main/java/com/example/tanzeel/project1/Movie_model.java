@@ -1,6 +1,9 @@
 package com.example.tanzeel.project1;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class Movie_model
 {
     public Movie_model(String thumbnail_path,String title,String date, String synopsis,String ratings )

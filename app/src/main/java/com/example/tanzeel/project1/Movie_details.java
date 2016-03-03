@@ -31,7 +31,12 @@ public class Movie_details extends Activity {
             rating_text.setText(MainActivity.movies.get(id).ratings);
             synopsis_text.setText(MainActivity.movies.get(id).synopsis);
             date_text.setText(MainActivity.movies.get(id).date);
-            Picasso.with(this).load(MainActivity.movies.get(id).thumbnail_path).into(thumbnail);
+            Picasso.with(this)
+                    .load(MainActivity.movies.get(id).thumbnail_path)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
+                    .into(thumbnail);
+
         }
        catch (Exception e)
        {

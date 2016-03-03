@@ -3,8 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.tanzeel.project1.MainActivity">
     <item
-        android:id="@+id/sort"
+    android:id="@+id/sort"
+    android:orderInCategory="100"
+    android:title="@string/action_settings"
+    app:showAsAction="never" />
+    <item
+        android:id="@+id/popular"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/popular_movies"
         app:showAsAction="never" />
 </menu>
